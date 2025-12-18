@@ -1,301 +1,257 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V0N3WWWQ7V"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-V0N3WWWQ7V');
-  </script>
   <meta charset="UTF-8">
+  <title>Cravo da Sorte • Informações e Acesso à Banca Brasileira</title>
+
+  <meta name="description" content="Cravo da Sorte é um site informativo com conteúdos sobre banca brasileira, acesso a plataformas, suporte e aplicativos populares no Brasil.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data: blob:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; frame-src *; connect-src *;">
-  <meta name="description" content="Águia Prime - Sua plataforma de bancas online">
-  <meta name="keywords" content="Águia Prime, banca águia prime melhor banca do Brasil">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Banca Águia Prime">
-  <meta property="og:description" content="Melhores bancas online: Tiger Club, Águia Oficial, Brasileira, Brazz!">
-  <meta property="og:url" content="https://aguiaprime.vip">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://aguiaprime.vip/og-image.jpg">
-  <title>Banca Águia Prime</title>
-  <link rel="icon" href="icon.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <link rel="icon" type="image/png" href="favicon.png">
+
   <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
+    body {
       margin: 0;
-      padding: 0;
-    }
-    body, html {
-      font-family: 'Roboto', sans-serif;
-      background: #f4f6f8;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      color: #1a1a1a;
-      overflow-x: hidden;
-    }
-    header {
-      background: linear-gradient(135deg, #805e02, #805e02);
-      display: flex;
-      align-items: center;
-      padding: 10px 20px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-      height: 50px;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 10;
-    }
-    header img {
-      height: 35px;
-      margin-right: 10px;
-      transition: transform 0.3s ease;
-    }
-    header img:hover {
-      transform: rotate(10deg) scale(1.1);
-    }
-    header h1 {
-      font-size: 18px;
-      font-weight: 600;
-      color: #fff;
-      letter-spacing: 1px;
-    }
-    #main-content {
-      flex: 1;
-      margin-top: 50px;
-      margin-bottom: 60px;
-      overflow-y: auto;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-    #tiger, #aguia, #brasileira, #brazz, #suporte {
-      width: 100%;
-      height: 100%;
-      transition: opacity 0.5s ease-in-out, transform 0.3s ease;
-    }
-    #suporte {
-      padding: 16px;
-      max-width: 600px;
-      margin: 0 auto;
-      display: none;
-    }
-    #suporte-content {
-      padding: 16px;
+      font-family: Arial, Helvetica, sans-serif;
       background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-      width: 100%;
-      opacity: 0;
-    }
-    #suporte-content.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-      border-radius: 10px;
-    }
-    footer {
-      background: linear-gradient(135deg, #805e02, #805e02);
-      display: flex;
-      flex-direction: column;
-      padding: 10px;
-      border-top: 2px solid #e0e6ec;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      height: 60px;
-      box-shadow: 0 -4px 12px rgba(0,0,0,0.1);
-      z-index: 10;
-      gap: 6px;
-    }
-    .footer-bar {
-      background: linear-gradient(135deg, #7bbdff, #1a3c5e);
-      height: 20px;
-      width: 100%;
-      position: fixed;
-      bottom: -20px;
-      z-index: 9;
-    }
-    footer .row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 48px;
-      gap: 4px;
-    }
-    footer button {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      font-size: 14px;
-      font-weight: 500;
-      color: #fff;
-      cursor: pointer;
-      padding: 4px;
-      border-radius: 8px;
-      transition: all 0.3s;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      flex: 1;
-      justify-content: center;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-    }
-    footer button.selected {
-      background: rgba(255, 255, 255, 0.3);
-      font-weight: 600;
-    }
-    footer button img {
-      height: 28px;
-      width: 28px;
-    }
-    footer button i {
-      font-size: 28px;
-    }
-    footer button:hover {
-      background: rgba(255, 255, 255, 0.2);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-    }
-    footer button:active {
-      transform: scale(0.95);
+      color: #222;
+      line-height: 1.7;
     }
 
-    /* Botão pequeno para bancabrasileirabet.com.br (SEO) */
-    .seo-link {
-      position: fixed;
-      bottom: 70px;
-      right: 10px;
-      background: #003087;
-      color: #fff;
-      font-size: 11px;
-      padding: 6px 10px;
-      border-radius: 20px;
+    header {
+      padding: 25px;
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 25px;
+    }
+
+    h2 {
+      margin-top: 30px;
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    a {
+      color: #0a58ca;
       text-decoration: none;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-      z-index: 11;
-      opacity: 0.9;
-      transition: all 0.3s;
-    }
-    .seo-link:hover {
-      opacity: 1;
-      transform: scale(1.05);
+      font-weight: bold;
     }
 
-    @media (max-width: 768px) {
-      .seo-link {
-        bottom: 68px;
-        right: 8px;
-        font-size: 10px;
-        padding: 5px 8px;
-      }
-      header { padding: 8px 15px; }
-      header img { height: 30px; }
-      header h1 { font-size: 16px; }
-      #main-content { margin-top: 50px; margin-bottom: 60px; }
-      footer { padding: 6px; height: 60px; }
-      footer .row { height: 40px; }
-      footer button { font-size: 12px; }
-      footer button img, footer button i { height: 24px; width: 24px; font-size: 24px; }
+    footer {
+      border-top: 1px solid #eaeaea;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+      margin-top: 40px;
+    }
+
+    @media(max-width:768px){
+      header h1 { font-size: 22px; }
+      h2 { font-size: 20px; }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <img src="icon.png" alt="Águia Prime Logo">
-    <h1>AGUIA PRIME</h1>
-  </header>
 
-  <div id="main-content">
-    <div id="tiger">
-      <iframe allow="clipboard-read; clipboard-write" src="https://app.tigersclub.vip/pr/hOprBfRL" loading="lazy" sandbox="allow-scripts allow-same-origin allow-clipboard-write"></iframe>
-    </div>
-    <div id="aguia" class="hidden">
-      <iframe allow="clipboard-read; clipboard-write" src="https://app.aguiaoficial.com/pr/XvrHVdt2" loading="lazy" sandbox="allow-scripts allow-same-origin allow-clipboard-write"></iframe>
-    </div>
-    <div id="brasileira" class="hidden">
-      <iframe allow="clipboard-read; clipboard-write" src="https://app.bancabrasileira.com.br/pr/UBmDxM8X" loading="lazy" sandbox="allow-scripts allow-same-origin allow-clipboard-write"></iframe>
-    </div>
-    <div id="brazz" class="hidden">
-      <iframe allow="clipboard-read; clipboard-write" src="https://app.brazz.club/pr/oC7VMz8A" loading="lazy" sandbox="allow-scripts allow-same-origin allow-clipboard-write"></iframe>
-    </div>
-    <div id="suporte" class="hidden">
-      <div id="suporte-content"></div>
-    </div>
-  </div>
+<header>
+  <h1>Cravo da Sorte</h1>
+</header>
 
-  <!-- Botão SEO pequeno e discreto (mas poderoso) -->
-  <a href="https://bancabrasileirabet.com.br" class="seo-link" target="_blank" rel="nofollow">
-    Banca Brasileira Bet – Melhor banca do Brasil
-  </a>
+<main>
 
-  <footer>
-    <div class="row">
-      <button onclick="mostrar('tiger')" class="selected">
-        <img src="tiger.png" alt="Tiger Club">
-        Tiger Club
-      </button>
-      <button onclick="mostrar('aguia')">
-        <img src="aguia.png" alt="Águia Oficial">
-        Águia Oficial
-      </button>
-      <button onclick="mostrar('brasileira')">
-        <img src="bra.png" alt="Brasileira">
-        Brasileira
-      </button>
-      <button onclick="mostrar('brazz')">
-        <img src="brazz.png" alt="Brazz">
-        Brazz
-      </button>
-      <button onclick="mostrar('suporte')">
-        <i class="fab fa-whatsapp"></i>
-        Suporte
-      </button>
-    </div>
-  </footer>
-  <div class="footer-bar"></div>
+  <h2>Informações sobre a Banca Brasileira</h2>
 
-  <script>
-    function mostrar(id) {
-      const tiger = document.getElementById('tiger');
-      const aguia = document.getElementById('aguia');
-      const brasileira = document.getElementById('brasileira');
-      const brazz = document.getElementById('brazz');
-      const suporte = document.getElementById('suporte');
+  <p>
+    A banca brasileira é amplamente procurada por usuários que desejam acessar
+    plataformas confiáveis, com funcionamento estável e suporte voltado para o público do Brasil.
+  </p>
 
-      if (id === 'suporte') {
-        window.open('https://wa.me/5583991177252?text=Ol%C3%A1%2C%20Suporte.%20Preciso%20de%20ajuda%21', '_blank');
-        return;
-      }
+  <p>
+    Com o crescimento dos aplicativos e serviços online, muitas pessoas buscam
+    informações claras sobre como acessar a banca brasileira de forma segura
+    e prática.
+  </p>
 
-      tiger.style.display = id === 'tiger' ? 'block' : 'none';
-      aguia.style.display = id === 'aguia' ? 'block' : 'none';
-      brasileira.style.display = id === 'brasileira' ? 'block' : 'none';
-      brazz.style.display = id === 'brazz' ? 'block' : 'none';
-      suporte.style.display = 'none';
+  <h2>Acesso e Plataforma</h2>
 
-      document.querySelectorAll('footer button').forEach(button => {
-        button.classList.remove('selected');
-        if (button.getAttribute('onclick') === `mostrar('${id}')`) {
-          button.classList.add('selected');
-        }
-      });
+  <p>
+    Atualmente, uma das opções mais buscadas para acesso à banca brasileira é o site
+    <a href="https://bancabrasileirabet.com.br" target="_blank" rel="noopener">
+      banca brasileira
+    </a>,
+    que oferece uma plataforma moderna, responsiva e pensada para usuários brasileiros.
+  </p>
+
+  <p>
+    O site disponibiliza acesso rápido, compatibilidade com dispositivos móveis
+    e suporte dedicado, tornando-se uma alternativa popular entre os usuários.
+  </p>
+
+  <h2>Conteúdo Informativo</h2>
+
+  <p>
+    O Cravo da Sorte tem como objetivo reunir conteúdos informativos,
+    guias de acesso e informações relevantes sobre plataformas de apostas
+    e serviços relacionados à banca brasileira.
+  </p>
+
+  <p>
+    Este site não realiza apostas, atuando apenas como fonte de informação
+    e direcionamento para plataformas oficiais.
+  </p>
+
+</main>
+
+<footer>
+  © 2025 Cravo da Sorte • Conteúdo informativo
+</footer>
+
+</body><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Águia Prime Bet • Informações Oficiais sobre Banca Brasileira</title>
+
+  <meta name="description" content="Águia Prime Bet é um portal informativo com conteúdos sobre banca brasileira, acesso oficial, plataformas confiáveis e suporte para usuários do Brasil.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Canonical próprio -->
+  <link rel="canonical" href="https://aguiaprimebet.com.br/">
+
+  <meta name="robots" content="index, follow">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #1f1f1f;
+      line-height: 1.8;
     }
 
-    document.addEventListener('DOMContentLoaded', () => {
-      mostrar('tiger');
-    });
-  </script>
+    header {
+      padding: 30px;
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    main {
+      max-width: 920px;
+      margin: auto;
+      padding: 30px;
+    }
+
+    h2 {
+      margin-top: 35px;
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    a {
+      color: #0a58ca;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer {
+      border-top: 1px solid #eaeaea;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 24px; }
+      h2 { font-size: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Águia Prime Bet</h1>
+</header>
+
+<main>
+
+  <h2>Banca Brasileira: informações confiáveis</h2>
+
+  <p>
+    A banca brasileira é amplamente buscada por usuários que desejam acessar
+    plataformas organizadas, com funcionamento estável e suporte voltado
+    ao público do Brasil.
+  </p>
+
+  <p>
+    Com o aumento da procura, é importante identificar fontes confiáveis
+    e sites que forneçam informações claras sobre acesso, funcionamento
+    e suporte das plataformas disponíveis.
+  </p>
+
+  <h2>Plataforma recomendada</h2>
+
+  <p>
+    Entre as opções mais procuradas atualmente, o site
+    <a href="https://bancabrasileirabet.com.br" target="_blank" rel="noopener">
+      banca brasileira
+    </a>
+    se destaca por oferecer uma estrutura moderna, compatível com dispositivos
+    móveis e atendimento via WhatsApp.
+  </p>
+
+  <p>
+    O domínio oficial apresenta navegação simples, carregamento rápido
+    e organização pensada para usuários brasileiros.
+  </p>
+
+  <h2>Sobre o Águia Prime Bet</h2>
+
+  <p>
+    O Águia Prime Bet atua exclusivamente como portal informativo,
+    reunindo conteúdos, guias de acesso e referências sobre plataformas
+    relacionadas à banca brasileira.
+  </p>
+
+  <p>
+    Este site não realiza apostas, funcionando apenas como fonte
+    de informação e direcionamento.
+  </p>
+
+</main>
+
+<footer>
+  © 2025 Águia Prime Bet • Conteúdo informativo
+</footer>
+
 </body>
+</html>
+
 </html>
